@@ -32,7 +32,7 @@
       <h3 class="card-title">{{__('Edit Status')}}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.statuses.update',$Status->stat_id)}}">
+    <form method="POST" action="{{route('admin.statuses.update',$status->stat_id)}}">
         <!-- /.card-header -->
         <div class="card-body">
             @csrf

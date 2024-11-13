@@ -49,6 +49,22 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                            @can('view_reservation')
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.reservations.index') }}" class="nav-link" id="cultures_prices">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>{{ __('Seat Reservation') }}</p>
+                                    </a>
+                                </li>
+                                @endcan
+                                @can('view_reservation_create_parent')
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.reservations.create') }}" class="nav-link" id="cultures_prices">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>{{ __('Seat Reservation') }}</p>
+                                    </a>
+                                </li>
+                                @endcan
                                 <li class="nav-item">
                                     <a href="" class="nav-link" id="cultures_prices">
                                         <i class="far fa-circle nav-icon"></i>
@@ -87,29 +103,25 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Bus') }}</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Bus Applications') }}</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Bus Applications Yearly') }}</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Bus Personnel') }}</p>
                                             </a>
@@ -137,29 +149,25 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Fetcher App Report') }}</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Transportation') }}</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Transportation Pt. 2') }}</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="" class="nav-link"
-                                                id="cultures_prices">
+                                            <a href="" class="nav-link" id="cultures_prices">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{{ __('Uniform') }}</p>
                                             </a>
@@ -174,13 +182,13 @@
         @endcan
 
 
-        @canany(['view_user', 'view_role','view_gender'])
+        @canany(['view_user', 'view_role', 'view_gender'])
             <li class="nav-item has-treeview" id="users_roles">
                 <a href="#" class="nav-link" id="users_roles_link">
                     <i class="nav-icon fas fa-tools"></i>
                     <p>
                         {{ __('Maintenance') }}
-                        <i class="right fas fa-angle-left" ></i>
+                        <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
@@ -190,7 +198,7 @@
                                 <i class="nav-icon fas fa-lock"></i>
                                 <p>
                                     {{ __('Security Management') }}
-                                    <i class="right fas fa-angle-left" ></i>
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -213,74 +221,144 @@
                                 </p>
                             </a>
                             @can('view_user')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.users.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('User') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.users.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('User') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                             @can('view_gender')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.genders.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('Gender') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.genders.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Gender') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                             @can('view_nationality')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.nationalities.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('Nationality') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.nationalities.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Nationality') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                             @can('view_birthcountry')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.birthcountries.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('Birth Country') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.birthcountries.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Birth Country') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                             @can('view_religion')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.religions.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('Religion') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.religions.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Religion') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                             @can('view_category')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.categories.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('Category') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.categories.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Category') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                             @can('view_status')
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.statuses.index') }}" class="nav-link" id="users">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>{{ __('Status') }}</p>
-                                    </a>
-                                </li>
-                            </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.statuses.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Status') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_studenttype')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.studenttypes.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Student Type') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_grade')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.grades.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Grade / Level') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_mode')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.modes.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Mode') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_motherlanguage')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.motherlanguages.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Language / Mother Tongue') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_location')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.locations.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Location') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_numbersibling')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.numbersiblings.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Number of Siblings') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endcan
+                            @can('view_curriculum')
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('admin.curriculums.index') }}" class="nav-link" id="users">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ __('Curriculum') }}</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             @endcan
                         </li>
                     @endcan

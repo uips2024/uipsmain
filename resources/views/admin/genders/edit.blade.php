@@ -32,7 +32,7 @@
       <h3 class="card-title">{{__('Edit Gender')}}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.genders.update',$Gender->gen_id)}}">
+    <form method="POST" action="{{route('admin.genders.update',$gender->gen_id)}}">
         <!-- /.card-header -->
         <div class="card-body">
             @csrf

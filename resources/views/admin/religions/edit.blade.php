@@ -32,7 +32,7 @@
       <h3 class="card-title">{{__('Edit Religion')}}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.religions.update',$Religion->rel_id)}}">
+    <form method="POST" action="{{route('admin.religions.update',$religion->rel_id)}}">
         <!-- /.card-header -->
         <div class="card-body">
             @csrf

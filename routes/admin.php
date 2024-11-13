@@ -34,11 +34,53 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
         Route::post('update','ProfileController@update')->name('update');
     });
 
+  //mother language
+  Route::resource('motherlanguages','MotherLanguagesController');
+  Route::get('get_motherlanguages','MotherLanguagesController@ajax')->name('get_motherlanguages');
+
+
+  //reservations
+  Route::resource('reservations','ReservationController');
+  Route::get('get_reservations','ReservationController@ajax')->name('get_reservations');
+
+
+  //curriculums
+  Route::resource('curriculums','CurriculumsController');
+  Route::get('get_curriculums','CurriculumsController@ajax')->name('get_curriculums');
+  
+  //reservations
+  Route::resource('motherlanguages','MotherLanguagesController');
+  Route::get('get_motherlanguages','MotherLanguagesController@ajax')->name('get_motherlanguages');
+  
+    //numbersiblings
+    Route::resource('numbersiblings','NumberSiblingsController');
+    Route::get('get_numbersiblings','NumberSiblingsController@ajax')->name('get_numbersiblings');
+
+    //locations
+    Route::resource('locations','LocationsController');
+    Route::get('get_locations','LocationsController@ajax')->name('get_locations');
+
     //genders
     Route::resource('genders','GendersController');
     Route::get('get_genders','GendersController@ajax')->name('get_genders');
 
+ //grades
+ Route::resource('grades','GradesController');
+ Route::get('get_grades','GradesController@ajax')->name('get_grades');
+
+ 
+ //modes
+ Route::resource('modes','ModesController');
+ Route::get('get_modes','ModesController@ajax')->name('get_modes');
+
+       //stud type
+       Route::resource('studenttypes','StudentTypesController');
+       Route::get('get_studenttypes','StudentTypesController@ajax')->name('get_studenttypes');
+
     
+    //reservations
+    Route::resource('reservations','ReservationController');
+    Route::get('get_reservations','ReservationController@ajax')->name('get_reservations');
     //statyus
     Route::resource('statuses','StatusesController');
     Route::get('get_statuses','StatusesController@ajax')->name('get_statuses');

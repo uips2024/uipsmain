@@ -12,7 +12,14 @@ use App\Models\Category;
 use App\Models\Religion;
 use App\Models\BirthCountry;
 use App\Models\Nationality;
+use App\Models\MotherLanguage;
+use App\Models\Location;
+use App\Models\StudentType;
 use App\Models\Gender;
+use App\Models\Grade;
+use App\Models\Mode;
+use App\Models\Curriculum;
+use App\Models\NumberSibling;
 use Yajra\DataTables\Html\Button;
 
 use DataTables;
@@ -22,6 +29,298 @@ use Illuminate\Validation\Rule;
 
 class AjaxController extends Controller
 {
+
+/**
+    * get curriculum by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_curriculums_by_desc(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $curriculums=Curriculum::where('cur_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $curriculums=Curriculum::All();
+        }
+
+        return response()->json($curriculums);
+
+    }
+       /**
+    * get curriculums select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_curriculums(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $curriculums=Curriculum::where('cur_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $curriculums=Curriculum::All();
+        }
+
+        return response()->json($curriculums);
+    }
+
+/**
+    * get siblings by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_numbersiblings_by_desc(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $numbersiblings=NumberSibling::where('sib_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $numbersiblings=NumberSibling::All();
+        }
+
+        return response()->json($numbersiblings);
+
+    }
+       /**
+    * get siblings select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_numbersiblings(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $numbersiblings=NumberSibling::where('sib_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $numbersiblings=NumberSibling::All();
+        }
+
+        return response()->json($numbersiblings);
+    }
+
+
+/**
+    * get studenttypes by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_studenttypes_by_desc(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $studenttypes=StudentType::where('stud_type_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $studenttypes=StudentType::All();
+        }
+
+        return response()->json($studenttypes);
+
+    }
+       /**
+    * get studenttypes select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_studenttypes(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $studenttypes=StudentType::where('stud_type_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $studenttypes=StudentType::All();
+        }
+
+        return response()->json($studenttypes);
+    }
+
+    /**
+    * get Mode by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_modes_by_desc(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $modes=Mode::where('mod_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $modes=Mode::All();
+        }
+
+        return response()->json($modes);
+
+    }
+       /**
+    * get Mode select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_modes(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $modes=Mode::where('mod_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $modes=Mode::All();
+        }
+
+        return response()->json($modes);
+    }
+
+
+
+/**
+    * get grades by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_grades_by_desc(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $grades=Grade::where('grad_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $grades=Grade::All();
+        }
+
+        return response()->json($grades);
+
+    }
+       /**
+    * get grades select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_grades(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $grades=Grade::where('stud_type_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $grades=Grade::All();
+        }
+
+        return response()->json($grades);
+    }
+
+
+
+    
+/**
+    * get location by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_locations_by_desc(Request $request)
+    {
+        if(isset($request->term))
+
+        {
+            $locations=Location::where('loc_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $locations=Location::All();
+        }
+
+        return response()->json($locations);
+
+    }
+       /**
+    * get location select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_locations(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $locations=Location::where('loc_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $locations=Location::All();
+        }
+
+        return response()->json($locations);
+    }
+
+
+
+
+
+  /**
+    * get languages by desc select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_motherlanguages_by_desc(Request $request)
+    {
+        if(isset($request->term))
+
+        {
+            $motherlanguages=MotherLanguage::where('lang_desc','like','%'.$request->term.'%')->get();
+        }
+        else{
+            $motherlanguages=MotherLanguage::All();
+        }
+
+        return response()->json($motherlanguages);
+
+    }
+       /**
+    * get gender select2
+    *
+    * @access public
+    * @var  @Request $request
+    */
+    public function get_motherlanguages(Request $request)
+    {
+        if(isset($request->term))
+        {
+            $motherlanguages=MotherLanguage::where('lang_desc','like','%'.$request->term.'%')->get();
+
+
+        }
+        else{
+            $motherlanguages=MotherLanguage::All();
+        }
+
+        return response()->json($motherlanguages);
+    }
 
     public function get_status_by_name(Request $request)
     {

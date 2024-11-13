@@ -53,8 +53,8 @@
         ajax: {
            beforeSend:function()
            {
-              $('.preloader').show();
-              $('.loader').show();
+            //   $('.preloader').show();
+            //   $('.loader').show();
            },
            url: ajax_url('get_genders'),
            processResults: function (data) {
@@ -81,8 +81,8 @@
         ajax: {
            beforeSend:function()
            {
-              $('.preloader').show();
-              $('.loader').show();
+            //   $('.preloader').show();
+            //   $('.loader').show();
            },
            url: ajax_url('get_nationalities'),
            processResults: function (data) {
@@ -109,8 +109,8 @@
         ajax: {
            beforeSend:function()
            {
-              $('.preloader').show();
-              $('.loader').show();
+            //   $('.preloader').show();
+            //   $('.loader').show();
            },
            url: ajax_url('get_birthcountries'),
            processResults: function (data) {
@@ -137,8 +137,8 @@
         ajax: {
            beforeSend:function()
            {
-              $('.preloader').show();
-              $('.loader').show();
+            //   $('.preloader').show();
+            //   $('.loader').show();
            },
            url: ajax_url('get_religions'),
            processResults: function (data) {
@@ -165,8 +165,8 @@
          ajax: {
             beforeSend:function()
             {
-               $('.preloader').show();
-               $('.loader').show();
+               // $('.preloader').show();
+               // $('.loader').show();
             },
             url: ajax_url('get_categories'),
             processResults: function (data) {
@@ -194,8 +194,8 @@
          ajax: {
             beforeSend:function()
             {
-               $('.preloader').show();
-               $('.loader').show();
+               // $('.preloader').show();
+               // $('.loader').show();
             },
             url: ajax_url('get_statuses'),
             processResults: function (data) {

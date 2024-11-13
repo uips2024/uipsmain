@@ -32,7 +32,7 @@
       <h3 class="card-title">{{__('Edit Birth Country')}}</h3>
     </div>
     <!-- /.card-header -->
-    <form method="POST" action="{{route('admin.birthcountries.update',$BirthCountry->birth_id)}}">
+    <form method="POST" action="{{route('admin.birthcountries.update',$birthcountry->birth_id)}}">
         <!-- /.card-header -->
         <div class="card-body">
             @csrf
